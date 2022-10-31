@@ -22,12 +22,6 @@ import {getAuth} from "firebase/auth"
 //   messagingSenderId: "60613292370",
 //   appId: "1:60613292370:web:95e2af6dc969e9f40aca8b"
 // };
-
-
-
-
-
-
 const firebaseConfig = {
   apiKey:process.env.REACT_APP_apiKey,
   authDomain:process.env.REACT_APP_authDomain,
