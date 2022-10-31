@@ -14,8 +14,10 @@ const ServiceDetail = () => {
   },[])
 
   return (
-    <div>
-      <h2> you are about to book :{service.name}</h2>
+    <div className='w-50 mx-auto'>
+      <h2>{service.name}</h2>
+      <img className='w-100' src={service.img}alt=''/>
+      <p className=''>{service.description}</p>
       <div className='text-center'>
         <Link to="/checkout">
           <button className='btn btn-primary'>proceed Checkout</button>
