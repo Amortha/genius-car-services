@@ -7,7 +7,7 @@ import auth from '../../../firebase.init';
 import Loading from '../../shared/Loading/Loading';
 import SocialLogin from '../SocialLogin/SocialLogin';
 import { toast } from 'react-toastify';
- import 'react-toastify/dist/ReactToastify.css';
+import 'react-toastify/dist/ReactToastify.css';
 import axios from 'axios';
 
 
@@ -29,14 +29,14 @@ const Login = () => {
     const [sendPasswordResetEmail, sending,] = useSendPasswordResetEmail(
         auth
     );
-    
-    if (loading || sending ){
-        return<Loading></Loading>
+
+    if (loading || sending) {
+        return <Loading></Loading>
     }
 
 
     if (user) {
-     navigate(from, { replace: true });
+        navigate(from, { replace: true });
     }
     if (error) {
         errorElement = <p className='text-danger'>Error: {error?.message}</p>
@@ -47,24 +47,24 @@ const Login = () => {
         const email = emailRef.current.value;
         const password = passwordRef.current.value;
 
-       await signInWithEmailAndPassword(email, password)
-//     const{data} = await axios.post('http://localhost:5000/login',{email});
-//        localStorage.setItem('accessToken',data.accessToken);
-//    navigate(from, { replace: true });    
-// console.log(data);
-}
+        await signInWithEmailAndPassword(email, password)
+        const { data } = await axios.post('http://localhost:5000/login', { email });
+        localStorage.setItem('accessToken', data.accessToken);
+        navigate(from, { replace: true });
+        console.log(data);
+    }
     const navigateRegister = event => {
         navigate('/register')
     }
     const resetpassword = async () => {
         const email = emailRef.current.value;
-        if(email){
+        if (email) {
             await sendPasswordResetEmail(email);
-        toast('Sent email');
-    }
-        else{
+            toast('Sent email');
+        }
+        else {
             toast("plese enter your email address")
-    
+
         }
     }
     return (
@@ -88,7 +88,7 @@ const Login = () => {
             <p>New to Genius Car?  <Link to='/register' className='pe auto text-decoration-none text-primary' onClick={navigateRegister}>please Register</Link></p>
             <p>Forgat Password?  <button className='btn btn-link text-primary pe auto text-decoration-none text-primary' onClick={resetpassword}>Reset Password</button></p>
             <SocialLogin></SocialLogin>
-        
+
         </div>
     );
 };
