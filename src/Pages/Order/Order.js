@@ -10,16 +10,23 @@ const Order = () => {
     const [orders, setOrders] = useState([]);
     useEffect(() => {
         const getOrders = async () => {
-           const email= user.email;
-            const url = `http://localhost:5000/order?email=${email}`
+            const email = user.email;
+            const url = `https://whispering-castle-98615.herokuapp.com/order?email=${email}`
             const { data } = await axios.get(url);
             setOrders(data);
         }
         getOrders();
     }, [user])
     return (
-        <div>
+        <div className='mx-auto w-50'>
             <h1>this is our all order{orders.length}</h1>
+            {
+                orders.map(order => <div key={order._id}>
+                    <p>{order.email}: {order.service}</p>
+
+
+                </div>)
+            }
         </div>
     );
 };
