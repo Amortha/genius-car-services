@@ -11,7 +11,7 @@ const Order = () => {
     useEffect(() => {
         const getOrders = async () => {
             const email = user.email;
-            const url = `https://whispering-castle-98615.herokuapp.com/order?email=${email}`
+            const url = `https://genius-car-services-serversite.onrender.com/order?email=${email}`
             const { data } = await axios.get(url);
             setOrders(data);
         }

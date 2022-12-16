@@ -5,7 +5,7 @@ const AddService = () => {
     const { register, handleSubmit } = useForm();
     const onSubmit = data =>{
      console.log(data);
-     const url = `https://whispering-castle-98615.herokuapp.com/service`;
+     const url = `https://genius-car-services-serversite.onrender.com/service`;
     fetch(url,{
        method:'post' ,
        headers:{

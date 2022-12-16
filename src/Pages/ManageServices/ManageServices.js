@@ -7,7 +7,7 @@ const ManageServices = () => {
     const handleDelete = id => {
         const proceed = window.confirm('Are you sure?');
         if (proceed) {
-            const url= `https://whispering-castle-98615.herokuapp.com/service/${id}`;
+            const url= `https://genius-car-services-serversite.onrender.com/service/${id}`;
             fetch(url,{
                method:'DELETE'
             })

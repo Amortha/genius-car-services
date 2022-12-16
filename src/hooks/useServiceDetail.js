@@ -4,7 +4,7 @@ const useServiceDetail = serviceId => {
     const [service,setService] = useState({});
 
     useEffect (()=>{
-      const url = `https://whispering-castle-98615.herokuapp.com/service/${serviceId}`;
+      const url = `https://genius-car-services-serversite.onrender.com/service/${serviceId}`;
   
       fetch(url)
       .then(res => res.json())

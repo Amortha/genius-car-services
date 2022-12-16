@@ -37,7 +37,7 @@ const handlePlaceOrder = event => {
         phone: event.target.phone.value
 
     }
-    axios.post('https://whispering-castle-98615.herokuapp.com/order',order)
+    axios.post('https://genius-car-services-serversite.onrender.com/order',order)
     .then(response =>{
     const {data}=response;
     if(data.insertedId){
